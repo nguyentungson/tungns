@@ -1,0 +1,17 @@
+_convertString: function( numStr ) {
+				var num;
+				if( /^[-+]?[0-9]+\.[0-9]+$/.test( numStr ) ) {
+					num = parseFloat( numStr );
+				} else if( /^\d+$/.test( numStr ) ) {
+					num = parseInt( numStr, 10 );
+				} else {
+					num = Number( numStr );
+				}
+				
+				if( !isNaN( num ) ) {
+					return num;
+				} else {
+					console.warn( numStr + " cannot be converted into a number" );
+					return false;
+				}
+			}
